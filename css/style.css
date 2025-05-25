@@ -1,0 +1,27 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Montserrat',sans-serif; line-height:1.6; }
+.hero { min-height:80vh; background:url('../images/hero.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; }
+section { padding:4rem 1rem; max-width:960px; margin:0 auto; }
+
+/* About Section */
+#about .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2C5F2D;
+  }
+  #about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+
+  .site-header { background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+.nav-list { list-style:none; display:flex; gap:1rem; justify-content:center; padding:1rem; }
+.nav-list a { text-decoration:none; color:#2C5F2D; font-weight:600; }
+.nav-list a.active { border-bottom:2px solid #2C5F2D; }
