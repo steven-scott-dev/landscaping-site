@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact | Breezyscapes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <body>
-        <header class="site-header">
-          <nav>
-            <ul class="nav-list">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
-      
-        <!-- existing hero section -->
-        <header class="hero" id="home">…</header>
-        …
-      
+  <header class="site-header">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero small-hero">
+    <div class="hero-content">
+      <h1>Get in Touch</h1>
+      <p>Ready for your free estimate?</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="contact">
+      <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Project Details" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Phone:</strong> (941) 385-3100</p>
+        <p><strong>Email:</strong> Service@Breezyscapes.com</p>
+        <p><strong>Hours:</strong> Mon–Fri, 8 am–5 pm</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Breezyscapes. All rights reserved.</p>
+      <p>Phone: (941) 385-3100 | Email: Service@Breezyscapes.com</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery | Breezyscapes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <body>
-        <header class="site-header">
-          <nav>
-            <ul class="nav-list">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
-      
-        <!-- existing hero section -->
-        <header class="hero" id="home">…</header>
-        …
-      
+  <header class="site-header">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero small-hero">
+    <div class="hero-content">
+      <h1>Our Work</h1>
+      <p>Before &amp; after — see the difference.</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="gallery">
+      <div class="parallax-track">
+        <div class="parallax-item" data-speed="0.3">
+          <img src="images/gallery1.jpg" alt="Project 1 before & after">
+        </div>
+        <div class="parallax-item" data-speed="0.5">
+          <img src="images/gallery2.jpg" alt="Project 2 before & after">
+        </div>
+        <div class="parallax-item" data-speed="0.4">
+          <img src="images/gallery3.jpg" alt="Project 3 before & after">
+        </div>
+        <div class="parallax-item" data-speed="0.6">
+          <img src="images/gallery4.jpg" alt="Project 4 before & after">
+        </div>
+        <div class="parallax-item" data-speed="0.2">
+          <img src="images/gallery5.jpg" alt="Project 5 before & after">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Breezyscapes. All rights reserved.</p>
+      <p>Phone: (941) 385-3100 | Email: Service@Breezyscapes.com</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
