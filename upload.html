@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Multi-Selector Upload</title>
+</head>
+<body>
+  <h1>Upload Your Gallery</h1>
+  <form id="upload-form" action="upload.php" method="post" enctype="multipart/form-data">
+    <label>Banner Images (one or more):</label><br>
+    <input type="file" name="images[]" multiple><br><br>
+
+    <label>Gallery Thumbnails (one or more):</label><br>
+    <input type="file" name="images[]" multiple><br><br>
+
+    <label>Other Photos (one or more):</label><br>
+    <input type="file" name="images[]" multiple><br><br>
+
+    <button type="submit">Upload All</button>
+  </form>
+
+  <div id="status"></div>
+
+  <script>
+    // optional: AJAXify it so you can show success / error inline
+    document.getElementById('upload-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const status = document.getElementById('status');
+      status.textContent = 'Uploading…';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data
+      })
+      .then(r => r.json())
+      .then(json => {
+        if (json.success) {
+          status.textContent = '✅ All images uploaded!';
+        } else {
+          status.textContent = '❌ Upload failed: ' + (json.error||'unknown error');
+        }
+      })
+      .catch(err => {
+        status.textContent = '❌ Network error';
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>

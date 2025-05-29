@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upload Images</title>
+  <link rel="stylesheet" href="css/upload.css" />
+</head>
+<body>
+  <h1>Upload Your Images</h1>
+
+  <!-- 1. Drop zone / click-to-select -->
+  <div id="drop-zone">
+    Drag &amp; drop images here<br/>
+    — or —<br/>
+    <button id="browseBtn">Browse…</button>
+    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+  </div>
+
+  <!-- 2. Preview area -->
+  <div id="preview"></div>
+
+  <!-- 3. Upload button -->
+  <button id="uploadBtn" disabled>Upload All</button>
+
+  <script src="js/upload.js"></script>
+</body>
+</html>
