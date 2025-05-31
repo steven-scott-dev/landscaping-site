@@ -15,6 +15,41 @@ body {
 }
 
 /* Header/Nav */
+
+/* Ensure the header behaves as a flex container */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px; /* optional—add whatever padding you want around the header */
+    position: relative; /* so any absolute‐positioned child is relative to this */
+  }
+  
+  /* Target the logo wrapper */
+  .site-logo {
+    margin-right: auto;       /* pushes any sibling elements (nav, buttons, etc.) to the right */
+    display: inline-flex;     /* so the <img> inside sits naturally */
+    align-items: center;      /* vertically center the logo image in the header */
+  }
+  
+  /* If you want the <img> itself to be absolutely flush to the very top left: */
+  .site-logo img {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+    max-width: 50%;
+      }
+      
+  
+  /* Optional “hard‐pin” if you need the image to ignore header padding */
+  .site-logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  
 .site-header {
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -57,7 +92,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  /* Removed the empty ruleset for 'section' */
   color: #fff;
   position: relative;
 }
@@ -120,27 +155,95 @@ section {
   margin: 0 auto;
 }
 
-/* Services */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
+/* Ensure the card expands to contain its image, heading, and text */
 .service-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
-.service-card h3 {
-  margin-bottom: 1rem;
-  color: #2C5F2D;
-}
-.service-card p {
-  color: #555;
-}
-
+  
+  /* Make the image span the full width of the card and maintain aspect ratio */
+  .service-card img {
+    width: 100%;
+    max-height: 150px;     /* Adjust as needed */
+    object-fit: cover;     /* Crop/scale without distortion */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Heading sits directly under the image */
+  .service-card h3 {
+    margin: 0 0 0.5rem;    /* 0 top, 0.5rem bottom */
+    color: #2C5F2D;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  
+  /* Paragraph fills remaining space so all cards stay uniform height */
+  .service-card p {
+    margin: 0;
+    color: #555;
+    flex-grow: 1;          /* Push extra space below if needed */
+    line-height: 1.5;
+  }
+  
+/* ========================================
+   Services Grid Container
+   ======================================== */
+   .services-grid {
+    display: grid;
+    /* Each card is at least 300px wide; extra space is distributed but cards won’t stretch beyond max-width */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center; /* Center cards when there’s extra horizontal space */
+  }
+  
+  /* ========================================
+     Individual Service Card
+     ======================================== */
+  .service-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    max-width: 300px; /* Prevent the card from stretching wider than 300px */
+    box-sizing: border-box;
+  }
+  
+  /* ========================================
+     Service Card Image
+     ======================================== */
+  .service-card img {
+    width: 100%;          /* Fill the card’s width up to its max-width */
+    height: auto;         /* Preserve the original aspect ratio */
+    max-width: 290px;     /* Don’t let it get larger than the natural 290px */
+    max-height: 262px;    /* Don’t let it get taller than the natural 262px */
+    object-fit: cover;    /* If the container is slightly different aspect ratio, crop/scale cleanly */
+    border-radius: 4px;
+    margin-bottom: 1rem;  /* Space between image and the heading */
+  }
+  
+  /* ========================================
+     Service Card Heading (H3)
+     ======================================== */
+  .service-card h3 {
+    margin: 0 0 0.5rem;   /* 0 top, 0.5rem bottom */
+    color: #2C5F2D;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  
+  /* ========================================
+     Service Card Paragraph (P)
+     ======================================== */
+  .service-card p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+  }
+  
 /* About */
 .about-content {
   max-width: 800px;
