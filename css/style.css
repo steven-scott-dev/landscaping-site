@@ -56,10 +56,19 @@
   }
   
   /* Logo Image */
+.site-logo img {
+  max-height: 128px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
   .site-logo img {
-    max-height: 128px;
-    width: 423px;
-    display: block;
+    max-height: 60px;
+    max-width: 200px;
+  }
 }
   
   /* Navigation List */
