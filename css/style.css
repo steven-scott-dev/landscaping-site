@@ -99,6 +99,35 @@
     bottom: -4px;
     left: 0;
   }
+
+/* Hide nav links on mobile */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--color-white);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px var(--shadow);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* Desktop default */
+.hamburger {
+  display: none;
+}
+
   
   /*========================================
   =               Hero Section             =
