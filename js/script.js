@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-<script>
+
   function toggleMenu() {
     const nav = document.getElementById('navMenu');
     nav.classList.toggle('open');
   }
-</script>
+
 
   
