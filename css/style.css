@@ -48,6 +48,48 @@
     box-shadow: 0 2px 4px var(--shadow);
     z-index: 1000;
   }
+
+
+/* --- Logo Image --- */
+.site-logo img {
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+/* Make it a little wider */
+@media screen and (max-width: 768px) {
+  .site-logo img {
+    max-height: 80px;
+  }
+}
+
+/* --- Hamburger Menu --- */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Show hamburger on small screens */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
   
   /* Logo Wrapper */
   .site-logo {
@@ -55,18 +97,13 @@
     align-items: center;
   }
   
-  /* Logo Image */
-.site-logo img {
-  max-height: 90px;        /* Full size for desktop */
-  width: auto;
-  height: auto;
-  display: block;
-}
+  .nav-links.open {
+    display: flex;
+  }
 
-/* Shrink slightly for mobile but still visible */
-@media screen and (max-width: 768px) {
-  .site-logo img {
-    max-height: 70px;
+  .nav-links a {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
   }
 }
   
